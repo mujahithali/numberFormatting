@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number Formatting</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">        
+        
+        <script src="js/jquery.min.js"></script>        
+        <script src="js/numberFormatting.js"></script>
+        <script src="js/site.js"></script>
+
+        <link rel="stylesheet" href="css/numberFormatting.css">
+        <link rel="stylesheet" href="css/site.css">
+    </head>
+
+    <body>
+        <center><h1><u>Number Formatting</u></h1></center>
+
+        <div class="nfUsageDiv">
+            <h2>Usage:</h2>
+            <ul>
+                <li>
+                    include "numberFormatting" js &amp; css in header
+                </li>
+                <li>
+                    define input field inside the div
+                </li>
+                <li>
+                    call doRegisterPcrmNumberFormattingEvents() function after DOM rendered
+                </li>
+                <li>
+                    configure configNumberFormatting() for the respective input field, wherever need.
+                </li>
+            </ul>
+            <pre>
+<span>
+    &lt;head&gt;
+        &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+        &lt;script src="js/numberFormatting.js" type="text/javascript"&gt;&lt;/script&gt;
+        &lt;link rel="stylesheet" href="css/numberFormatting.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;input type="text" id="id_inputField" /&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script&gt;
+        $(function() {
+            doRegisterPcrmNumberFormattingEvents();
+            $("#id_inputField").configNumberFormatting();
+        })
+    &lt;/script&gt;
+</span>
+        </pre>
+        </div>
+
+        <div class="nfOptionsDiv">
+            <h2>Options:</h2>
+            <p>The options that you can set are:</p>
+
+            <ul>
+                <li>
+                    <a href="#id_nfInputSign"><b>nfInputSign</b></a>: Currency format. It will appear as number prefix. (Default value: '')
+                </li>
+                <li>
+                    <a href="#id_nfIsAllowDecimal"><b>nfIsAllowDecimal</b></a>: Allow to enter decimal value. (Default value: false)
+                </li>
+                <li>
+                    <a href="#id_nfDecimalMinLength"><b>nfDecimalMinLength</b></a>: Define decimal precision minimum length. (Default value: 0)
+                </li>
+                <li>
+                    <a href="#id_nfDecimalMaxLength"><b>nfDecimalMaxLength</b></a>: Define decimal precision maximum length. (Default value: 20)
+                </li>
+                <li>
+                    <a href="#id_nfIsAllowNegative"><b>nfIsAllowNegative</b></a>: Allow to enter negative value. (Default value: false)
+                </li>
+                <li>
+                    <a href="#id_nfMinNumber"><b>nfMinNumber</b></a>: Define the minimum value. (Default value: 0)
+                </li>
+                <li>
+                    <a href="#id_nfMaxNumber"><b>nfMaxNumber</b></a>: Define the maximum value. (Default value: '')
+                </li>
+                <li>
+                    <a href="#id_nfStepValue"><b>nfStepValue</b></a>: Define the step value while clicking up/down arrow (keyboard key / button). (Default value: '', if nfInputArrowBtn is true, then default value: '0.1')
+                </li>
+                <li>
+                    <a href="#id_nfInputArrowBtn"><b>nfInputArrowBtn</b></a>: Show the up &amp; down arrow button. (Default value: false)
+                </li>
+            </ul>
+        </div>
+
+        <hr />
+        
+        <div class="nfInputNumbFormattingPocDiv">
+            <div id="id_nfInit">
+                <b>Empty Initialize</b>
+                <p>
+                    <pre>$("#id_inputField_1").configNumberFormatting();</pre>
+                </p>
+                <p>
+                    <span>It just doing formatting number in Indian current format.</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_1" />
+                </div>
+            </div>
+            <div id="id_nfInputSign">
+                <b>nfInputSign</b>
+                <p>
+                    <pre>$("#id_inputField_2").configNumberFormatting({ nfInputSign: "$" });</pre>
+                </p>
+                <p>
+                    <span>Current format. It will appear as number prefix. (Default value: '')</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_2" />
+                </div>
+            </div>
+            <div id="id_nfIsAllowDecimal">
+                <b>nfIsAllowDecimal</b>
+                <p>
+                    <pre>$("#id_inputField_3").configNumberFormatting({ nfIsAllowDecimal: "true" });</pre>
+                </p>
+                <p>
+                    <span>Allow to enter decimal value. (Default value: false)</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_3" />
+                </div>
+            </div>
+            <div id="id_nfDecimalMinLength">
+                <b>nfDecimalMinLength</b>
+                <p>
+                    <pre>$("#id_inputField_4").configNumberFormatting({ nfDecimalMinLength: "1" });</pre>
+                </p>
+                <p>
+                    <span>Define decimal precision minimum length. (Default value: 0)</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_4" />
+                </div>
+            </div>
+            <div id="id_nfDecimalMaxLength">
+                <b>nfDecimalMaxLength</b>
+                <p>
+                    <pre>$("#id_inputField_5").configNumberFormatting({ nfDecimalMaxLength: "2" });</pre>
+                </p>
+                <p>
+                    <span>Define decimal precision maximum length. (Default value: 20)</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_5" />
+                </div>
+            </div>
+            <div id="id_nfIsAllowNegative">
+                <b>nfIsAllowNegative</b>
+                <p>
+                    <pre>$("#id_inputField_6").configNumberFormatting({ nfIsAllowNegative: "true" });</pre>
+                </p>
+                <p>
+                    <span>Allow to enter negative value. (Default value: false)</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_6" />
+                </div>
+            </div>
+            <div id="id_nfMinNumber">
+                <b>nfMinNumber</b>
+                <p>
+                    <pre>$("#id_inputField_7").configNumberFormatting({ nfMinNumber: "10" });</pre>
+                </p>
+                <p>
+                    <span>Define the minimum value. (Default value: 0)</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_7" />
+                </div>
+            </div>
+            <div id="id_nfMaxNumber">
+                <b>nfMaxNumber</b>
+                <p>
+                    <pre>$("#id_inputField_8").configNumberFormatting({ nfMaxNumber: "1000" });</pre>
+                </p>
+                <p>
+                    <span>Define the maximum value. (Default value: '')</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_8" />
+                </div>
+            </div>
+            <div id="id_nfStepValue">
+                <b>nfStepValue</b>
+                <p>
+                    <pre>$("#id_inputField_9").configNumberFormatting({ nfStepValue: "0.5" });</pre>
+                </p>
+                <p>
+                    <span>Define the step value while clicking up/down arrow (keyboard key / button). (Default value: '', if nfInputArrowBtn is true, then default value: '0.1')</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_9" />
+                </div>
+            </div>
+            <div id="id_nfInputArrowBtn">
+                <b>nfInputArrowBtn</b>
+                <p>
+                    <pre>$("#id_inputField_10").configNumberFormatting({ nfInputArrowBtn: "true" });</pre>
+                </p>
+                <p>
+                    <span>Show the up &amp; down arrow button. (Default value: false)</span>
+                </p>
+                <div>
+                    <input type="text" class="inputField" id="id_inputField_10" />
+                </div>
+            </div>
+        </div>
+
+        <div class="backtoTopBtnDiv">
+            <button onclick="backtoTopFn()" id="id_backtoTopBtn" title="Back to top"><span>&#8593;</span>Top</button>
+        </div>
+    </body>
+</html>

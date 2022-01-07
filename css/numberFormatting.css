@@ -1,0 +1,88 @@
+
+.nf_dollar_input_parent_div,
+.nf_percentage_input_parent_div,
+.nf_number_input_arrow_parent_div {
+    position: relative;
+}
+
+    .nf_dollar_input_parent_div::before {
+        content: '$';
+        font-size: 12px;
+        position: absolute;
+        left: 9px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nf_percentage_input_parent_div::before {
+        content: '%';
+        font-size: 12px;
+        position: absolute;
+        right: 9px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+.nf_number_input_arrow_btn_div {
+    display: none;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nf_number_input_arrow_parent_div .nf_number_input_arrow_btn_div {
+    display: inline-grid !important;
+}
+
+input.nf_number_input_field[nfInputSign*="$"] {
+    padding-left: 20px !important;
+}
+
+input.nf_number_input_field[nfInputSign*="%"] {
+    padding-right: 20px !important;
+}
+
+.nf_number_input_arrow_parent_div input.nf_number_input_field {
+    /*padding-right: 20px !important;*/
+}
+
+.nf_number_input_arrow_btn_div i {
+    cursor: pointer;
+    color: #5c5c5c;
+    font-size: 12px;
+    height: 12px;
+}
+
+.nf_number_input_arrow_btn_div i:active {
+    transform: translateY(1px);
+}
+
+
+.nfArrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    font-size: 12px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

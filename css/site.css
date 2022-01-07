@@ -1,0 +1,64 @@
+body {
+    height: auto;
+    background-image: linear-gradient(to bottom right, #ff000000, #c2f3d7);
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #393939;
+}
+
+pre {
+    margin: 0px !important;
+    border: 1px solid #a9a9a9;
+    border-radius: 5px;
+}
+
+.nfInputNumbFormattingPocDiv pre {
+    border: 0px !important;
+}
+
+.nfInputNumbFormattingPocDiv {
+    margin: 10px;
+}
+
+.nfInputNumbFormattingPocDiv div {
+    padding: 10px 0;
+}
+
+.nfInputNumbFormattingPocDiv > div {
+    border: 1px solid #9fcfb3;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+hr {
+    border-style: dashed;
+}
+
+li {
+    padding: 5px;
+}
+
+.inputField {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background: #fff;
+    font-size: 12px;
+}
+
+.backtoTopBtnDiv {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+#id_backtoTopBtn {
+    cursor: pointer;
+}
+
+#id_backtoTopBtn span {
+    display: flex;
+    justify-content: center;
+}
